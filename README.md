@@ -20,9 +20,10 @@ This repository is intended to provide a way to install the Azure Monitor extens
 - The AppDynamics Machine Agent is installed and configured in systemd as `appdynamics-machine-agent`.
 - You can edit the `AzureMonitor/config.yml.j2` file to your liking, including the necessary services and format.
 
-## Metrics Bench
+## Metrics Extension Workbench
 
-- If you want to use the Metrics Bench, you should allow inbound TCP through 9090 for the VM's security group.
+- If you want to use the Metrics Extension Workbench, you should allow inbound TCP through 9090 for the VM's security group.
+- To run the Metrics Extension Workbench, head into the VM and run it with sudo from `/opt/appdynamics/machine-agent/run-extensions-workbench.sh`, this will start the servlet on 9090 and allow you to see the metrics at the extension level, before it is sent to the controller.
 
 ## Links
 
