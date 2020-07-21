@@ -2,6 +2,12 @@
 
 This repository is intended to provide a way to install the Azure Monitor extension on a new VM using Ansible, very easily.
 
+## Requirements
+
+- An Azure Subscription.
+- An Azure App Registration with the `Monitoring Reader` role and a client secret.
+- A Virtual Machine to run the Azure Monitor extension, this guide assumes Ubuntu 18.04 in Standard B2s sizing, and assumes the `azureuser` + SSH PEM auth.
+- An AppDynamics Controller.
 
 ## Getting Started
 
