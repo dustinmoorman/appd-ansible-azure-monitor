@@ -78,6 +78,11 @@
         dest: "{{ machine_agent_directory }}/monitors"
         remote_src: yes
 
+    - name: Write Azure Monitor configuration
+      template:
+        src: "{{ azure_monitor_config_template_local }}"
+        dest: "{{ machine_agent_directory }}/monitors/{{ azure_monitor_config_file }}"
+
     - name: Configure Machine Agent in systemd
       copy:
         src: "{{ machine_agent_directory }}/{{ machine_agent_systemd_service_file }}" 
