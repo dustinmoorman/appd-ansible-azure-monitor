@@ -1,0 +1,31 @@
+{
+  "account_access_key": "",
+  "controller_host": "",
+  "required_packages": [
+    "openjdk-8-jdk",
+    "python3-lxml",
+    "mysql-server",
+    "unzip"
+  ],
+  "mysql_jdbc_local_source": "",
+  "mysql_root_password": "",
+  "controller_port": "",
+  "tier_name": "",
+  "node_name": "",
+  "account_name": "",
+  "java_agent_source": "",
+  "java_agent_installer_archive": "",
+  "java_agent_directory": "",
+  "java_agent_version_directory": "",
+  "machine_agent_source": "",
+  "machine_agent_installer_archive": "",
+  "machine_agent_directory": "/opt/appdynamics/machine-agent",
+  "machine_agent_systemd_service_name": "appd-machine-agent",
+  "server_visibility_enabled": "true",
+  "netviz_agent_source": "",
+  "netviz_agent_installer_archive": "",
+  "netviz_agent_directory": "/opt/appdynamics/networkvisibility",
+  "netviz_agent_systemd_service_name": "appd-netviz-agent",
+  "application_name": "appd-ansible-ubuntu",
+  "appdynamics_dir": "/opt/appdynamics"
+}
