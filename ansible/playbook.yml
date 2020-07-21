@@ -82,6 +82,7 @@
       template:
         src: "{{ azure_monitor_config_template_local }}"
         dest: "{{ machine_agent_directory }}/monitors/{{ azure_monitor_config_file }}"
+        mode: "0755"
 
     - name: Configure Machine Agent in systemd
       copy:
