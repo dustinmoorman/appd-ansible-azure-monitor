@@ -54,6 +54,12 @@
         xpath: /controller-info/tier-name
         value: "{{ tier_name }}"
 
+    - name: Write node name to Machine Agent configuration file
+      xml:
+        path: "{{ machine_agent_directory }}/conf/controller-info.xml"
+        xpath: /controller-info/node-name
+        value: "{{ node_name }}"
+
     - name: Write Server Visibility Monitoring setting to Machine Agent configuration file
       xml:
         path: "{{ machine_agent_directory }}/conf/controller-info.xml"
@@ -66,7 +72,7 @@
         xpath: /controller-info/account-name
         value: "{{ account_name }}"
 
-    - name: Write account access key to Java Agent configuration file
+    - name: Write account access key to Machine Agent configuration file
       xml:
         path: "{{ machine_agent_directory }}/conf/controller-info.xml"
         xpath: /controller-info/account-access-key
@@ -82,6 +88,12 @@
       template:
         src: "{{ azure_monitor_config_template_local }}"
         dest: "{{ machine_agent_directory }}/monitors/{{ azure_monitor_config_file }}"
+        mode: "0755"
+
+    - name: Write Extension Workbench Script
+      template:
+        src: "{{ extension_workbench_script_local }}"
+        dest: "{{ machine_agent_directory }}/{{ extension_workbench_script }}"
         mode: "0755"
 
     - name: Configure Machine Agent in systemd
