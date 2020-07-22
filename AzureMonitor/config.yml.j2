@@ -11,24 +11,28 @@ accounts:
 
     # https://github.com/Appdynamics/azure-monitoring-extension/blob/master/src/main/java/com/appdynamics/extensions/azure/customnamespace/utils/Constants.java
     services:
-       - resourceGroups: ["{{ azure_services_resource_groups }}"]
+       - resourceGroups: [{{ azure_services_resource_groups }}]
          serviceName: "Virtual machine"
          regions: [".*"]
          serviceInstances: [".*"]
-       - resourceGroups: ["{{ azure_services_resource_groups }}"]
+       - resourceGroups: [{{ azure_services_resource_groups }}]
          serviceName: "App Service"
          regions: [".*"]
          serviceInstances: [".*"]
-       - resourceGroups: ["{{ azure_services_resource_groups }}"]
+       - resourceGroups: [{{ azure_services_resource_groups }}]
          serviceName: "Vault"
          regions: [".*"]
          serviceInstances: [".*"]
-       - resourceGroups: ["{{ azure_services_resource_groups }}"]
+       - resourceGroups: [{{ azure_services_resource_groups }}]
          serviceName: "SQL server"
          regions: [".*"]
          serviceInstances: [".*"]
-       - resourceGroups: ["{{ azure_services_resource_groups }}"]
+       - resourceGroups: [{{ azure_services_resource_groups }}]
          serviceName: "Storage account"
+         regions: [".*"]
+         serviceInstances: [".*"]
+       - resourceGroups: [{{ azure_services_resource_groups }}]
+         serviceName: "SearchService"
          regions: [".*"]
          serviceInstances: [".*"]
 
