@@ -1,5 +1,4 @@
 #prefix used to show metrics in AppDynamics
-#metricPrefix: "Server|Component:<TIER_ID>|Custom Metrics|Azure|"
 metricPrefix: "{{ azure_monitor_metric_prefix }}"
 
 accounts:
@@ -10,9 +9,26 @@ accounts:
          tenant: "{{ azure_tenant_id }}"
          secret: "{{ azure_secret }}"
 
+    # https://github.com/Appdynamics/azure-monitoring-extension/blob/master/src/main/java/com/appdynamics/extensions/azure/customnamespace/utils/Constants.java
     services:
-       - resourceGroups: ["{{ azure_services_resource_groups }}"]  # Please put the required resourceGroups only
+       - resourceGroups: ["{{ azure_services_resource_groups }}"]
          serviceName: "Virtual machine"
+         regions: [".*"]
+         serviceInstances: [".*"]
+       - resourceGroups: ["{{ azure_services_resource_groups }}"]
+         serviceName: "App Service"
+         regions: [".*"]
+         serviceInstances: [".*"]
+       - resourceGroups: ["{{ azure_services_resource_groups }}"]
+         serviceName: "Vault"
+         regions: [".*"]
+         serviceInstances: [".*"]
+       - resourceGroups: ["{{ azure_services_resource_groups }}"]
+         serviceName: "SQL server"
+         regions: [".*"]
+         serviceInstances: [".*"]
+       - resourceGroups: ["{{ azure_services_resource_groups }}"]
+         serviceName: "Storage account"
          regions: [".*"]
          serviceInstances: [".*"]
 
@@ -75,12 +91,12 @@ numberOfThreads: 5
 
 controllerInfo:
   controllerHost: "{{ controller_host }}"
-  controllerPort: "{{ controller_port }}"
+  controllerPort: {{ controller_port }}
   account: "{{ account_name }}"
   username: ""
   password: ""
   encryptedPassword: ""
-  controllerSslEnabled: "{{ controller_ssl_enabled }}"
+  controllerSslEnabled: {{ controller_ssl_enabled }}
   enableOrchestration: false
   uniqueHostId: ""
   accountAccessKey: ""
