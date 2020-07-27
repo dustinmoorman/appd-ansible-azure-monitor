@@ -42,6 +42,12 @@
         xpath: /controller-info/controller-port
         value: "{{ controller_port }}"
 
+    - name: Write controller SSL Enabled setting to Machine Agent configuration file
+      xml:
+        path: "{{ machine_agent_directory }}/conf/controller-info.xml"
+        xpath: /controller-info/controller-ssl-enabled
+        value: "{{ controller-ssl-enabled }}"
+
     - name: Write application name to Machine Agent configuration file
       xml:
         path: "{{ machine_agent_directory }}/conf/controller-info.xml"
