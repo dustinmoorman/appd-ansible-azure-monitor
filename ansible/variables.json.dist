@@ -2,7 +2,7 @@
   "azure_subscription_id": "<AZURE_SUBSCRIPTION_ID>",
   "azure_tenant_id": "<AZURE_TENANT_ID>",
   "azure_secret": "<AZURE_SECRET>",
-  "azure_services_resource_groups": "<AZURE_RESOURCE_GROUPS>",
+  "azure_services_resource_group": "<AZURE_RESOURCE_GROUP>",
   "azure_monitor_accounts_display_name": "<AZURE_METRICS_DISPLAY_NAME>",
   "azure_monitor_metric_prefix": "Custom Metrics|Azure|",
   "azure_monitor_machine_path": "<AZURE_MACHINE_PATH>",
